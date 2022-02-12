@@ -1,6 +1,18 @@
+:root {
+  --jalluBrown: #3d1d10;
+  --jalluLB: #755a41;
+  --jalluLight: #c89b6e;
+  --jalluOrange: #f87b05;
+  --jalluRed: #992605;
+}
+
+/* white-space: pre-wrap; ----> preserves line breaks from text area*/
 .test {
   color: white;
-  font: 18px serif;
-  height: 100%;
-  overflow: auto;
+  font-size: 8px;
+  width: 85%;
+  height: 100px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-y: auto;
 }
