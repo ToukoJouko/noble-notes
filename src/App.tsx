@@ -3,10 +3,11 @@ import NoteForm from "./components/NoteForm";
 import Note from "./components/Note";
 
 const App: React.FC = () => {
-  let storedNotes = window.localStorage.getItem("notes") as string;
+  const storedNotes = window.localStorage.getItem("notes") as string;
   const [notes, setNotes] = useState<any>(
-    storedNotes ? JSON.parse(storedNotes) : ""
+    storedNotes ? JSON.parse(storedNotes) : []
   );
+  const [newTitle, setNewTitle] = useState<string>("");
   const [newNote, setNewNote] = useState<string>("");
 
   useEffect(() => {
@@ -14,67 +15,57 @@ const App: React.FC = () => {
   }, [notes]);
 
   const deleteNote = (id: number) => {
-    let storedNotes = window.localStorage.getItem("notes") as string;
+    const storedNotes = window.localStorage.getItem("notes") as string;
     let currentNotes = JSON.parse(storedNotes);
-    console.log(currentNotes);
+
     for (let i = 0; i < currentNotes.length; i++) {
       if (i === id) {
         currentNotes.splice(i, 1);
       }
     }
-    console.log(currentNotes);
-    //window.localStorage.removeItem("notes");
+
     setNotes(currentNotes);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const noteObject = {
+      title: newTitle,
       content: newNote,
     };
     //notes.push(noteObject);
     setNotes(notes.concat(noteObject));
     //localStorage supports only strings. The array of notes must be converted to a string so that the notes can be stored.
-
     window.localStorage.setItem(
       "notes",
       JSON.stringify(notes.concat(noteObject))
     );
+    setNewTitle("");
+    setNewNote("");
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleNoteChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ): void => {
     event.preventDefault();
     setNewNote(event.target.value);
   };
 
-  const handleDelete = (event: React.MouseEvent<HTMLButtonElement>): void => {
+  const handleTitleChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     event.preventDefault();
-  };
-
-  const renderNotes = () => {
-    if (notes) {
-      return (
-        <ul>
-          {notes.map((note: any, index: any) => (
-            <Note
-              key={index}
-              note={note}
-              handleDelete={() => deleteNote(index)}
-            />
-          ))}
-        </ul>
-      );
-    } else {
-      return null;
-    }
+    setNewTitle(event.target.value);
   };
 
   return (
     <div>
       <NoteForm
+        title={newTitle}
         note={newNote}
-        handleChange={handleChange}
         onSubmit={handleSubmit}
+        handleTitleChange={handleTitleChange}
+        handleNoteChange={handleNoteChange}
       />
       <ul>
         {notes &&
