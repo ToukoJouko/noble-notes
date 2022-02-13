@@ -13,8 +13,11 @@ interface NoteProps {
 const Note: React.FC<NoteProps> = ({ note, handleDelete }) => {
   return (
     <div>
-      <Bottle content={note.content} title={note.title}></Bottle>
-      <button onClick={handleDelete}>delete</button>
+      <Bottle
+        content={note.content}
+        title={note.title.toUpperCase()}
+        delete={handleDelete}
+      ></Bottle>
     </div>
   );
 };

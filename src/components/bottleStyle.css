@@ -6,13 +6,64 @@
   --jalluRed: #992605;
 }
 
+.svg {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  color: var(--jalluLB);
+  text-shadow: 1px 0px var(--jalluBrown);
+  font-size: 10px;
+  width: 86%;
+  word-wrap: break-word;
+  text-align: center;
+}
+
 /* white-space: pre-wrap; ----> preserves line breaks from text area*/
-.test {
-  color: white;
+.content {
+  color: var(--jalluBrown);
   font-size: 8px;
   width: 85%;
-  height: 100px;
+  height: 50px;
   word-wrap: break-word;
   white-space: pre-wrap;
-  overflow-y: auto;
+  overflow: auto;
+}
+
+.bottleFooter {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: 7px;
+}
+
+.deleteBtn {
+  font-size: 7px;
+  padding: 0;
+}
+
+/* scrollbar customization */
+.content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: var(--jalluRed);
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: var(--jalluOrange);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--jalluRed);
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: #e97100;
 }

@@ -67,7 +67,7 @@ const App: React.FC = () => {
         handleTitleChange={handleTitleChange}
         handleNoteChange={handleNoteChange}
       />
-      <ul>
+      <div>
         {notes &&
           notes.map((note: any, index: any) => (
             <Note
@@ -76,7 +76,7 @@ const App: React.FC = () => {
               handleDelete={() => deleteNote(index)}
             />
           ))}
-      </ul>
+      </div>
     </div>
   );
 };
