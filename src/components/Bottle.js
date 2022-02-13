@@ -137,7 +137,7 @@ const Bottle = (props) => {
         </g>
 
         <foreignObject x="10" y="60" width="90%" height="80%">
-          <div>
+          <div className="noteContainer">
             <h3 className="title">{props.title}</h3>
             <div className="content">{props.content}</div>
             <div className="bottleFooter">

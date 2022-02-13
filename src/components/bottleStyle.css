@@ -1,6 +1,6 @@
 :root {
   --jalluBrown: #3d1d10;
-  --jalluLB: #755a41;
+  --jalluLB: #836c56;
   --jalluLight: #c89b6e;
   --jalluOrange: #f87b05;
   --jalluRed: #992605;
@@ -9,6 +9,14 @@
 .svg {
   margin: 0;
   padding: 0;
+}
+
+.noteContainer {
+  width: 100%;
+  height: 105px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -32,6 +40,8 @@
 }
 
 .bottleFooter {
+  position: absolute;
+  bottom: 0;
   width: 85%;
   display: flex;
   flex-direction: row;
