@@ -23,7 +23,9 @@
   color: var(--jalluLB);
   text-shadow: 1px 0px var(--jalluBrown);
   font-size: 10px;
+  font-family: "Gabriela", serif;
   width: 86%;
+  height: 15px;
   word-wrap: break-word;
   text-align: center;
 }
@@ -31,7 +33,8 @@
 /* white-space: pre-wrap; ----> preserves line breaks from text area*/
 .content {
   color: var(--jalluBrown);
-  font-size: 8px;
+  font-size: 12px;
+  font-family: "Tangerine", cursive;
   width: 85%;
   height: 50px;
   word-wrap: break-word;
