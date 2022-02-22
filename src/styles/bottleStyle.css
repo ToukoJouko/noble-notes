@@ -28,6 +28,8 @@
   height: 15px;
   word-wrap: break-word;
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* white-space: pre-wrap; ----> preserves line breaks from text area*/
@@ -36,13 +38,15 @@
   font-size: 12px;
   font-family: "Tangerine", cursive;
   width: 85%;
-  height: 50px;
+  height: 60px;
   word-wrap: break-word;
   white-space: pre-wrap;
   overflow: auto;
 }
 
 .bottleFooter {
+  color: var(--jalluBrown);
+  font-family: "Gabriela", serif;
   position: absolute;
   bottom: 0;
   width: 85%;
@@ -57,8 +61,16 @@
 }
 
 .deleteBtn {
+  color: var(--jalluBrown);
   font-size: 7px;
   padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.deleteBtn:hover {
+  font-size: 7.5px;
+  cursor: pointer;
 }
 
 /* scrollbar customization */

@@ -1,0 +1,24 @@
+:root {
+  --jalluBrown: #3d1d10;
+  --jalluLB: #836c56;
+  --jalluLight: #cea474;
+  --jalluOrange: #f87b05;
+  --jalluRed: #992605;
+}
+
+.noteForm {
+  background-color: rgb(183, 95, 36, 0.8);
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--jalluBrown);
+  font-family: "Gabriela", serif;
+}
+
+.noteForm > form {
+  display: flex;
+  flex-direction: column;
+}

@@ -5,6 +5,7 @@ interface NoteProps {
   note: {
     title: string;
     content: string;
+    creationDate: string;
   };
 
   handleDelete: () => void;
@@ -12,10 +13,11 @@ interface NoteProps {
 
 const Note: React.FC<NoteProps> = ({ note, handleDelete }) => {
   return (
-    <div>
+    <div className="bottleContainer">
       <Bottle
         content={note.content}
         title={note.title.toUpperCase()}
+        creationDate={note.creationDate}
         delete={handleDelete}
       ></Bottle>
     </div>

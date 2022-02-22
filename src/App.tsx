@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NoteForm from "./components/NoteForm";
 import Note from "./components/Note";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const App: React.FC = () => {
   const storedNotes = window.localStorage.getItem("notes") as string;
@@ -9,6 +11,7 @@ const App: React.FC = () => {
   );
   const [newTitle, setNewTitle] = useState<string>("");
   const [newNote, setNewNote] = useState<string>("");
+  const [showForm, setShowForm] = useState<boolean>(false);
 
   useEffect(() => {
     window.localStorage.setItem("notes", JSON.stringify(notes));
@@ -29,9 +32,15 @@ const App: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
+
+    const date = new Date();
+    const creationDate =
+      date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
     const noteObject = {
       title: newTitle,
       content: newNote,
+      creationDate: creationDate,
     };
     //notes.push(noteObject);
     setNotes(notes.concat(noteObject));
@@ -42,6 +51,10 @@ const App: React.FC = () => {
     );
     setNewTitle("");
     setNewNote("");
+  };
+
+  const formToggle = (): void => {
+    setShowForm(!showForm);
   };
 
   const handleNoteChange = (
@@ -59,15 +72,21 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <NoteForm
-        title={newTitle}
-        note={newNote}
-        onSubmit={handleSubmit}
-        handleTitleChange={handleTitleChange}
-        handleNoteChange={handleNoteChange}
-      />
-      <div>
+    <div className="app">
+      <Header showForm={showForm} formToggle={formToggle} />
+
+      {showForm ? (
+        <NoteForm
+          title={newTitle}
+          note={newNote}
+          onSubmit={handleSubmit}
+          handleTitleChange={handleTitleChange}
+          handleNoteChange={handleNoteChange}
+        />
+      ) : (
+        ""
+      )}
+      <div className="notesContainer">
         {notes &&
           notes.map((note: any, index: any) => (
             <Note
@@ -77,6 +96,8 @@ const App: React.FC = () => {
             />
           ))}
       </div>
+
+      <Footer />
     </div>
   );
 };

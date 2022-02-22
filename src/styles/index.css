@@ -1,0 +1,113 @@
+:root {
+  --jalluBrown: #3d1d10;
+  --jalluLB: #836c56;
+  --jalluLight: #c89b6e;
+  --jalluOrange: #f87b05;
+  --jalluRed: #992605;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  background: #cea474;
+  position: relative;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.app {
+}
+
+.notesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.bottleContainer {
+  margin: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b75f24;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer > a > svg {
+  fill: var(--jalluBrown);
+}
+
+.footer > a > svg:hover {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  background-color: #b75f24;
+  font-family: "Gabriela", serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+}
+
+.header > button {
+  background-color: transparent;
+  border-color: var(--jalluBrown);
+  margin-left: auto;
+  color: var(--jalluBrown);
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.header > button:hover {
+  border-width: 3px;
+  cursor: pointer;
+}
+
+.logoHeading {
+  display: flex;
+  color: var(--jalluBrown);
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 20px;
+  gap: 15px;
+  margin-left: 20px;
+  align-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .logoHeading {
+    font-size: 2.5vw;
+  }
+}

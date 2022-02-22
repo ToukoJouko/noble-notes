@@ -16,12 +16,13 @@ const NoteForm: React.FC<FormProps> = ({
   handleNoteChange,
 }) => {
   return (
-    <div>
+    <div className="noteForm">
       <form onSubmit={onSubmit}>
         <label htmlFor="title">Title</label>
         <input
           id="title"
           type="text"
+          maxLength={18}
           value={title}
           onChange={handleTitleChange}
         />

@@ -2,7 +2,7 @@ import React from "react";
 
 const Bottle = (props) => {
   const date = new Date();
-  const today =
+  const creationDate =
     date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
   return (
@@ -141,7 +141,7 @@ const Bottle = (props) => {
             <h3 className="title">{props.title}</h3>
             <div className="content">{props.content}</div>
             <div className="bottleFooter">
-              <div className="date">{today}</div>
+              <div className="date">{props.creationDate}</div>
               <button className="deleteBtn" onClick={props.delete}>
                 delete
               </button>
