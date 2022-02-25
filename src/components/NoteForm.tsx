@@ -20,6 +20,7 @@ const NoteForm: React.FC<FormProps> = ({
       <form onSubmit={onSubmit}>
         <label htmlFor="title">Title</label>
         <input
+          className="titleInput"
           id="title"
           type="text"
           maxLength={18}
@@ -35,7 +36,7 @@ const NoteForm: React.FC<FormProps> = ({
           cols={25}
           onChange={handleNoteChange}
         ></textarea>
-        <input type="submit" value="Create note" />
+        <input className="formButton" type="submit" value="Create note" />
       </form>
     </div>
   );

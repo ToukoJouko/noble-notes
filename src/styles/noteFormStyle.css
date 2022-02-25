@@ -1,9 +1,5 @@
 :root {
   --jalluBrown: #3d1d10;
-  --jalluLB: #836c56;
-  --jalluLight: #cea474;
-  --jalluOrange: #f87b05;
-  --jalluRed: #992605;
 }
 
 .noteForm {
@@ -19,6 +15,29 @@
 }
 
 .noteForm > form {
+  color: var(--jalluBrown);
   display: flex;
   flex-direction: column;
+}
+
+.titleInput {
+  border-width: 2px;
+  border-color: var(--jalluBrown);
+}
+
+.noteForm > form > textarea {
+  border-width: 2px;
+  border-color: var(--jalluBrown);
+}
+
+.formButton {
+  color: var(--jalluBrown);
+  border-color: var(--jalluBrown);
+  margin-top: 5px;
+}
+
+.formButton:hover {
+  cursor: pointer;
+  background-color: var(--jalluBrown);
+  color: white;
 }
