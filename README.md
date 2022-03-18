@@ -5,6 +5,7 @@
     <a href="https://noble-notes.netlify.app/">Click here to open the app</a>
 </div>
 <br/>
+
 ![image](https://user-images.githubusercontent.com/72581705/158992259-6f6f4c0c-bc4d-4e7b-a93c-c70774fffd34.png)
 
 Take notes in the style of noble booze A.K.A. Jaloviina. This app is mandatory for every noble booze lover.
