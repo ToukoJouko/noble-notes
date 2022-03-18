@@ -30,7 +30,12 @@ select {
   font: inherit;
 }
 
-.app {
+.quote {
+  font-size: 40px;
+  font-family: "Gabriela", serif;
+  margin-top: 20%;
+  color: var(--jalluBrown);
+  text-align: center;
 }
 
 .notesContainer {

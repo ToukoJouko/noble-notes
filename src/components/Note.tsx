@@ -18,7 +18,7 @@ const Note: React.FC<NoteProps> = ({ note, handleDelete }) => {
         content={note.content}
         title={note.title.toUpperCase()}
         creationDate={note.creationDate}
-        delete={handleDelete}
+        handleDelete={handleDelete}
       ></Bottle>
     </div>
   );

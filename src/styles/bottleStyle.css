@@ -34,8 +34,8 @@
 /* white-space: pre-wrap; ----> preserves line breaks from text area*/
 .content {
   color: var(--jalluBrown);
-  font-size: 12px;
-  font-family: "Tangerine", cursive;
+  font-size: 9px;
+  font-family: "Charm", cursive;
   width: 85%;
   height: 60px;
   word-wrap: break-word;

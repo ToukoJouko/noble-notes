@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import NoteForm from "./components/NoteForm";
 import Note from "./components/Note";
 import Footer from "./components/Footer";
@@ -42,7 +42,7 @@ const App: React.FC = () => {
       content: newNote,
       creationDate: creationDate,
     };
-    //notes.push(noteObject);
+
     setNotes(notes.concat(noteObject));
     //localStorage supports only strings. The array of notes must be converted to a string so that the notes can be stored.
     window.localStorage.setItem(
@@ -86,15 +86,21 @@ const App: React.FC = () => {
       ) : (
         ""
       )}
+
       <div className="notesContainer">
-        {notes &&
+        {notes.length !== 0 ? (
           notes.map((note: any, index: any) => (
             <Note
               key={index}
               note={note}
               handleDelete={() => deleteNote(index)}
             />
-          ))}
+          ))
+        ) : (
+          <div className="quote">
+            Noble booze can be added with the "+ add note" -button
+          </div>
+        )}
       </div>
 
       <Footer />

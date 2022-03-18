@@ -1,6 +1,18 @@
 import React from "react";
 
-const Bottle = (props) => {
+interface BottleProps {
+  title: string;
+  content: string;
+  creationDate: string;
+  handleDelete: () => void;
+}
+
+const Bottle: React.FC<BottleProps> = ({
+  title,
+  content,
+  creationDate,
+  handleDelete,
+}) => {
   return (
     <div>
       <svg
@@ -134,11 +146,11 @@ const Bottle = (props) => {
 
         <foreignObject x="10" y="60" width="90%" height="80%">
           <div className="noteContainer">
-            <h3 className="title">{props.title}</h3>
-            <div className="content">{props.content}</div>
+            <h3 className="title">{title}</h3>
+            <div className="content">{content}</div>
             <div className="bottleFooter">
-              <div className="date">{props.creationDate}</div>
-              <button className="deleteBtn" onClick={props.delete}>
+              <div className="date">{creationDate}</div>
+              <button className="deleteBtn" onClick={handleDelete}>
                 delete
               </button>
             </div>
